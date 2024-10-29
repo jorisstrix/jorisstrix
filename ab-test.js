@@ -11,22 +11,23 @@
         }
         return null;
     }
+}
 
     // Function to set a cookie with specified name and value
     function setSessionCookie(name, value) {
-        document.cookie = name + "=" + (value || "") + "; path=/";
+        document.cookie = name + "=" + (value || "") + "; path=/"
     }
 
     // Get the current page view count from the cookie
     var pageviewCount = getCookie("pageviewCount");
     if (pageviewCount === null) {
-        pageviewCount = 1; // If cookie doesn't exist, initialize to 1
+        pageviewCount = 1 // If cookie doesn't exist, initialize to 1
     } else {
-        pageviewCount = parseInt(pageviewCount, 10) + 1; // Increment the count
+        pageviewCount = parseInt(pageviewCount, 10) + 1 // Increment the count
     }
 
     // Set the updated page view count in the cookie
     setSessionCookie("pageviewCount", pageviewCount);
-    console.log('Page view count cookie set to: ' + pageviewCount);
-})();
+    console.log('Page view count cookie set to: ' + pageviewCount)
+)()
 </script>
