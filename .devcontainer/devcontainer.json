@@ -1,0 +1,21 @@
+{
+    "name": "Jekyll Minimal",
+    "image": "mcr.microsoft.com/devcontainers/ruby:3",
+    "features": {
+      "ghcr.io/devcontainers/features/ruby": {
+        "version": "3.0"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": ["rebornix.ruby", "yzhang.markdown-all-in-one"]
+      }
+    },
+    "postCreateCommand": "bundle install",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "remoteUser": "vscode",
+    "forwardPorts": [4000]
+  }
+  
