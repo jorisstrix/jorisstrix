@@ -1,4 +1,3 @@
-// ab-test.js
 (function() {
   function load_script(src) {
     const script = document.createElement('script');
