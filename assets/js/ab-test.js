@@ -1,42 +1,41 @@
-<script>
+<script type="text/javascript">
   (function abTestScript() {
-    // Define the weight for Variant A (percentage)
+    // Define the weight for Variant A (as a percentage)
     const weightForA = 0;
+    
+    // Constants for random number range and cookie expiration
+    const RANDOM_MAX = 2147483648;
+    const COOKIE_EXPIRATION_DAYS = 30;
+    const COOKIE_MAX_AGE = 60 * 60 * 24 * COOKIE_EXPIRATION_DAYS;
 
-  // Generate a random number between 0 and 2147483647
-  const randomNumber = Math.floor(Math.random() * 2147483648);
+    // Generate a random number and determine the variant based on weight
+    const randomNumber = Math.floor(Math.random() * RANDOM_MAX);
+    const variant = (randomNumber % 100) < weightForA ? 'A' : 'B';
 
-  // Determine the variant based on the random number and weight
-  const variant = (randomNumber % 100) < weightForA ? 'A' : 'B';
+    // Set the cookie to persist the variant
+    document.cookie = `strixAB=${variant}; path=/; max-age=${COOKIE_MAX_AGE}`;
 
-  // Set the cookie to persist the variant for 30 days
-  const cookieValue = `strixAB=${variant}; path=/; max-age=${60 * 60 * 24 * 30}`;
-  document.cookie = cookieValue;
+    // Define A/B test details
+    const testName = 'AB test name here';
 
-  // Define A/B test details
-  const testName = 'AB test name here'; // A variable that describes the A/B test
+    // Push data to the dataLayer for analytics tracking if dataLayer exists
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'abTestPerformance',
+        testName,
+        variant,
+        timestamp: new Date().toISOString()
+      });
+    } else {
+      console.warn("dataLayer is not defined.");
+    }
 
-  // Push data to the dataLayer for analytics tracking
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'abTestPerformance',
-  testName,
-  variant,
-  timestamp: new Date().toISOString()
-    });
-
-  // Consolidated log message
-  console.log({
-    "Weight for Variant A": weightForA,
-  "Generated Random Number": randomNumber,
-  "Assigned Variant": variant,
-  "Cookie Set": cookieValue,
-  "DataLayer Push": {
-    event: 'abTestPerformance',
-  testName,
-  variant,
-  timestamp: new Date().toISOString()
-      }
+    // Consolidated log message for debugging
+    console.log({
+      "Weight for Variant A": weightForA,
+      "Generated Random Number": randomNumber,
+      "Assigned Variant": variant,
+      "Cookie Set": `strixAB=${variant}; path=/; max-age=${COOKIE_MAX_AGE}`
     });
   })();
 </script>
