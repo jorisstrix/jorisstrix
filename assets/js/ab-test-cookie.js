@@ -1,4 +1,3 @@
-// ab-test-cookie.js
 (function() {
     const cookie_expiration_days = 30;
     const cookie_max_age = 60 * 60 * 24 * cookie_expiration_days;
@@ -9,3 +8,4 @@
     
     document.cookie = `strixab=${variant}; path=/; max-age=${cookie_max_age}`;
   })();  
+  
