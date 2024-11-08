@@ -1,18 +1,12 @@
-// ab-test.js
+// ab-test-datalayer.js
 (function() {
-  function load_script(src) {
-    const script = document.createElement('script');
-    script.src = src;
-    script.defer = true;
-    script.onload = function() {
-      console.log(src + ' loaded successfully');
-    };
-    script.onerror = function() {
-      console.log('Error loading ' + src);
-    };
-    document.head.appendChild(script);
-  }
-
-  load_script('https://jorisstrix.github.io/assets/js/ab-test-cookie.js');
-  load_script('https://jorisstrix.github.io/assets/js/ab-test-datalayer.js');
+  console.log("Loading datalayer script");
+  window.datalayer = window.datalayer || [];
+  window.datalayer.push({
+    event: 'abtestperformance',
+    testname: 'ab test name here',
+    variant: 'a',
+    timestamp: new Date().toISOString()
+  });
+  console.log("Event pushed to datalayer:", window.datalayer);
 })();
