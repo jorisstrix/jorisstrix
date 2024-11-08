@@ -1,6 +1,6 @@
 (function abTestScript() {
   // Define the weight for Variant A (as a percentage)
-  const weightForA = 0;
+  const weightForA = 50;
   
   // Constants for random number range and cookie expiration
   const RANDOM_MAX = 2147483648;
