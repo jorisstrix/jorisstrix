@@ -5,7 +5,6 @@
     const random_max = 2147483648;
     const random_number = Math.floor(Math.random() * random_max);
     const variant = (random_number % 100) < weight_for_a ? 'a' : 'b';
-    
     document.cookie = `strixab=${variant}; path=/; max-age=${cookie_max_age}`;
   })();  
   
