@@ -19,7 +19,7 @@
     } else {
       console.warn("dataLayer is not defined.");
     }
-
+  // Added requestAnimationFrame
     console.log({
       "Weight for Variant A": weightForA,
       "Generated Random Number": randomNumber,
