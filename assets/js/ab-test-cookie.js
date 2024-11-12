@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const cookieExpirationDays = 30;
     const cookieMaxAge = 60 * 60 * 24 * cookieExpirationDays;
     const weightForA = 50;
