@@ -6,3 +6,4 @@
         variant: 'A',
         timestamp: new Date().toISOString()
     });
+})();
