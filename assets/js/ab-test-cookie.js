@@ -6,3 +6,4 @@
     const randomNumber = Math.floor(Math.random() * randomMax);
     const variant = (randomNumber % 100) < weightForA ? 'A' : 'B';
     document.cookie = `StrixAB=${variant}; path=/; max-age=${cookieMaxAge}`;
+})();
