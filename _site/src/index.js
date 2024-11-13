@@ -1,1 +1,0 @@
-console.log("Project setup is complete. Ready to build something awesome!");
