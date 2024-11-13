@@ -1,6 +1,8 @@
 theme: jekyll-theme-minimal
 lsi: false
 safe: true
+source: .
+destination: ./_site
 incremental: false
 highlighter: rouge
 gist:
