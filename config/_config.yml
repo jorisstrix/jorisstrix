@@ -1,12 +1,22 @@
+title: Joris Strix
+description: "Site for experimenting bi Joris Strix"
+url: "https://jorisstrix.github.io/"
 theme: jekyll-theme-minimal
 lsi: false
 safe: true
-source: .
-destination: ./_site
 incremental: false
 highlighter: rouge
 gist:
   noscript: false
 kramdown:
+  input: GFM
   math_engine: mathjax
   syntax_highlighter: rouge
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache
+destination: ./_site
+incremental: true
+source: .
