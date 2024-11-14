@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" itemscope="itemscope">
+
+  <head>
+    {% block head %}
+      {% include 'sections/main/head.html.twig' %}
+    {% endblock %}
+  </head>
+  <body class="index-page">
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DSNQHVN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    {% block header %}
+      {% include 'sections/main/header.html.twig' %}
+    {% endblock %}
+
+    <main class="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}
+      {% include 'sections/main/footer.html.twig' %}
+    {% endblock %}
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    {% block assetsVendorScripts %}
+      {% include 'sections/main/assetsVendorScripts.html.twig' %}
+    {% endblock %}
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
