@@ -87,6 +87,14 @@ h6 {
   font-family: var(--heading-font);
 }
 
+/*--------------------------------------------------------------
+# Custom classes and styling
+--------------------------------------------------------------*/
+
+.sitename svg path {
+  fill: var(--heading-color);
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
