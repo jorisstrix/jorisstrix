@@ -1,6 +1,6 @@
 /**
-* Template Name: Selecao
-* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+* Template Name: Append
+* Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -110,6 +110,11 @@
   });
 
   /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
+  /**
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
@@ -140,6 +145,15 @@
       }, false);
     });
 
+  });
+
+  /**
+   * Frequently Asked Questions Toggle
+   */
+  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
+    faqItem.addEventListener('click', () => {
+      faqItem.parentNode.classList.toggle('faq-active');
+    });
   });
 
   /**
