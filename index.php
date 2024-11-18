@@ -1,8 +1,8 @@
 <?php
-require_once 'vendor/autoload.php'; // Load Composer's autoloader
+require_once 'vendor/autoload.php'; 
 
 $loader = new \Twig\Loader\FilesystemLoader('twigTemplates');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render('index.html.twig'); // Render the main template
+echo $twig->render('index.html.twig'); 
 ?>
