@@ -4,3 +4,4 @@ node_modules/
 .jekyll-cache/
 .DS_Store
 assets/tmp/
+*.tar.gz
